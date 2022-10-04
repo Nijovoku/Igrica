@@ -1,108 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    
-    <title>Naslov</title>
-    <style>
-        @import url('http://fonts.cdnfonts.com/css/games');
-        body{
-            background-color: F8EDE3;
-        }
-        h1{
-            font-family: 'Games', sans-serif;
-            font-weight: 500;
-        }
-        div
-        {
-            float: left;
-            width:105px;
-            height:150px;
-            background-color: EEF1FF;
-            text-align: center;
-            color: EEF1FF;
-            font-family: Segoe UI;
-            border: 3px solid;
-            border-color: AAC4FF;
-            line-height: 150px;
-            cursor: pointer;
-            user-select: none;
-            margin-left: 8px;
-            margin-bottom: 10px;
-        }
-        .active {
-            border-color: C6EBC5;
-            background-color: FBF2CF;
-            color: FA7070;
-            font-weight: bold;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>Vojin</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
   </head>
   <body>
-    <center>
-        <h1>Memory Game</h1>
-        <hr>
-    </center>
+
+    <div class="top-container">
+      <img class="upper-cloud"src="pics/cloud.png" alt="">
+      <h1>I'm Vojin</h1>
+      <h2>the epitome of <span class="pro">perfection</span></h2 >
+      <img class="lower-cloud"src="pics/cloud.png" alt="">
+      <img src="pics/mountain.png" alt="">
+    </div>
+
+    <div class="middle-container">
+      <div class="profile">
+        <img class='pic' src="pics/PictureCircle.png" alt="">
+        <h2 class="hello">Hello.</h2>
+        <p class="first-p">I'm not owner of anything at all, but one day sure I will be. I'm great karateka and very smart person. My only drawback is that I have no weaknesses.</p>
+      </div>
+      <hr>
+      <div class="skills">
+        <h2>My Skills.</h2>
+        <div class="skill-row">
+          <img class="skill-pic" src="pics/PictureSkills.png" alt="">
+          <h3>Logical and Problem Solving Mind</h3>
+          <p class="p1">I can make everything better, simpler and more optimal than it already is. It's not that I want that, that's just the way I am. You can not help it, I tried...</p>
+        </div>
+        <div class="skill-row">
+          <img class="skill-pic2" src="pics/PictureSkills2.png" alt="">
+          <h3>God Tier Martial Artist</h3>
+          <p class='p2'>Considered as the Greatest of them All by many. Have no known weaknesses, but many strenghts. Out of infinite number of battles, have never tasted defeat.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="contact-me">
+        <h2>Get In Touch</h2>
+        <h3 class='strive'>If you strive to become an example of humans perfection</h3>
+        <p class="first-p">Contact me through links listed below to unlock you full potential and go far beyond your limits.</p>
+        <a class="btn" href="mailto:karisik1.vojin3@gmail.com">CONTACT ME</a>
+      </div>
+    </div>
+
+
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.instagram.com/_vojin_k_/">Instagram</a>
+      <a class="footer-link" href="https://www.facebook.com/vojin.karisik.144/">Facebook</a>
+      <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+      <p class="watermak">© 2022 Vojin Karisik.</p>
+    </div>
+
+
   </body>
-
-  <script>
-    let allCards = [];
-    const ListOfNumberToPlay = [];
-    const ItterationList = [];
-    let usedNums = [];
-    let activeCards = [];
-    
-
-    function addDiv(num) {
-        const div = document.createElement('div');
-        div.innerHTML = num;
-        document.body.appendChild(div);
-        allCards.push(div);
-    };
-    
-    function addRandom(x,y,z) {
-        while (x.length < y) {
-            let num = Math.floor(Math.random() * z);
-            usedNums.includes(num)?num:x.push(num);
-            usedNums.push(num);
-        };
-    };
-
-    function manipulateDivs(d){
-        d.forEach(x => {
-            x.addEventListener('click', () => {
-                if (activeCards.length === 2) {
-                    if (activeCards[0].innerHTML === activeCards[1].innerHTML){
-                    //version 1
-                        document.body.removeChild(activeCards[0]);
-                        document.body.removeChild(activeCards[1]);
-                    //version 2
-                        //activeCards = [];
-                    }
-                    activeCards.forEach(x => {  
-                        x.classList.remove('active')})
-                    activeCards = [];
-                };
-                if (x != activeCards[0]) {
-                    x.classList.add('active');
-                    activeCards.push(x);
-                }
-                
-            });
-        });     
-    };
-
-    
-    addRandom(ListOfNumberToPlay, 10, 20);
-    ListOfNumberToPlay.forEach(x => ListOfNumberToPlay.push(x));
-    usedNums = [];
-
-    addRandom(ItterationList, 20, 20);
-    
-    //number of divs
-    for (x=0; x<20; x++){
-        addDiv(ListOfNumberToPlay[ItterationList[x]]);
-    };
-
-    manipulateDivs(allCards);
-
-</script>
 </html>
